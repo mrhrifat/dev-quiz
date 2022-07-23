@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import signup from "../images/signup.svg";
+import classes from "../styles/Illustration.css";
 
 const Illustration = () => {
   return (
-    <div>Illustration</div>
-  )
-}
+    <div class={classes.illustration}>
+      <img src={signup} alt="Signup" />
+    </div>
+  );
+};
 
-export default Illustration
+export default Illustration;
