@@ -1,6 +1,6 @@
 import React from "react";
 import signup from "../images/signup.svg";
-import classes from "../styles/Illustration.css";
+import classes from "../styles/Illustration.module.css";
 
 const Illustration = () => {
   return (
