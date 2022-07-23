@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import classes from "../styles/Videos.module.css";
+import Video from "./Video";
 
 const Videos = () => {
   return (
-    <div>Videos</div>
-  )
-}
+    <div className={classes.videos}>
+      <Video />
+    </div>
+  );
+};
 
-export default Videos
+export default Videos;
