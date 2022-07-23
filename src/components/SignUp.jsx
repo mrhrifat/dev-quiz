@@ -1,7 +1,7 @@
 import React from "react";
-import Form from "./Form";
+import classes from "../styles/Signup.module.css";
 import Illustration from "./Illustration";
-import classes from '../styles/Signup.module.css'
+import SignUpForm from "./SignUpForm";
 
 const SignUp = () => {
   return (
@@ -9,7 +9,7 @@ const SignUp = () => {
       <h1>Create an account</h1>
       <div className="column">
         <Illustration />
-        <Form className={`${classes.signup}`} />
+        <SignUpForm className={`${classes.signup}`} />
       </div>
     </>
   );
