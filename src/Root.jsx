@@ -1,11 +1,15 @@
 import React from "react";
+// import Home from "./components/Home";
 import Layout from "./components/Layout";
-import Home from "./components/pages/Home";
+import Login from "./components/Login";
+// import SignUp from "./components/SignUp";
 
 const Root = () => {
   return (
     <Layout>
-      <Home />
+      {/* <Home /> */}
+      {/* <SignUp /> */}
+      <Login/>
     </Layout>
   );
 };
