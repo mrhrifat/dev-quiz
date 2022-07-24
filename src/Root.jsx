@@ -1,7 +1,8 @@
 import React from "react";
 // import Home from "./components/Home";
 import Layout from "./components/Layout";
-import Quiz from "./components/Quiz";
+import Result from "./components/Result";
+// import Quiz from "./components/Quiz";
 // import Login from "./components/Login";
 // import SignUp from "./components/SignUp";
 
@@ -11,7 +12,8 @@ const Root = () => {
       {/* <Home /> */}
       {/* <SignUp /> */}
       {/* <Login/> */}
-      <Quiz />
+      {/* <Quiz /> */}
+      <Result />
     </Layout>
   );
 };
