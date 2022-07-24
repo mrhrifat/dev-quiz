@@ -23,7 +23,7 @@ const Form = ({ children, className, ...rest }) => {
       <Button>
         <span>Submit now</span>
       </Button>
-      <div className="info">
+      <div className={classes.info}>
         Already have an account? <a href="login.html">Login</a> instead.
       </div>
     </form>
