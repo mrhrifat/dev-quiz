@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "../styles/Form.module.css";
 import Button from "./Button";
 import CheckBox from "./CheckBox";
@@ -24,7 +25,7 @@ const Form = ({ children, className, ...rest }) => {
         <span>Submit now</span>
       </Button>
       <div className={classes.info}>
-        Already have an account? <a href="login.html">Login</a> instead.
+        Already have an account? <Link to="/login">Login</Link> instead.
       </div>
     </form>
   );
