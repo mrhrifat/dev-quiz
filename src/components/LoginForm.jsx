@@ -15,7 +15,7 @@ const LoginForm = ({ className, children, ...rest }) => {
       <Button>
         <span>Login</span>
       </Button>
-      <div class="info">
+      <div className={classes.info}>
         Don't have an account? <a href="signup.html">Signup</a> instead.
       </div>
     </form>
