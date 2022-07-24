@@ -12,8 +12,12 @@ const LoginForm = ({ className, children, ...rest }) => {
         icon="alternate_email"
       />
       <TextInput placeholder="Enter password" type="password" icon="lock" />
-      <Button>Login</Button>
-      <div class="info">Don't have an account? <a href="signup.html">Signup</a> instead.</div>
+      <Button>
+        <span>Login</span>
+      </Button>
+      <div class="info">
+        Don't have an account? <a href="signup.html">Signup</a> instead.
+      </div>
     </form>
   );
 };
