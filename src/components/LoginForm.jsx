@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "../styles/Form.module.css";
 import Button from "./Button";
 import TextInput from "./TextInput";
@@ -16,7 +17,7 @@ const LoginForm = ({ className, children, ...rest }) => {
         <span>Login</span>
       </Button>
       <div className={classes.info}>
-        Don't have an account? <a href="signup.html">Signup</a> instead.
+        Don't have an account? <Link to="/signup">Signup</Link> instead.
       </div>
     </form>
   );
