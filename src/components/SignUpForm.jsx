@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import classes from "../styles/Form.module.css";
 import Button from "./Button";
@@ -7,26 +7,42 @@ import CheckBox from "./CheckBox";
 import TextInput from "./TextInput";
 
 const Form = ({ children, className, ...rest }) => {
-  const [userName, setUserName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [confirmPassword, setConfirmPassword] = useState();
-  const [agree, setAgree] = useState();
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [agree, setAgree] = useState("");
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
-
+  const navigate = useNavigate();
   const { signup } = useAuth();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      setError("Password doesn't match");
+      return setError("Password doesn't match");
+    }
+
+    try {
+      setError("");
+      setLoading(true);
+      await signup(email, password, userName);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+      setError("Failed to create an account!");
     }
   };
 
   return (
-    <form className={`${className} ${classes.form}`} action="#" {...rest}>
+    <form
+      className={`${className} ${classes.form}`}
+      action="#"
+      {...rest}
+      onSubmit={handleSubmit}
+    >
       <TextInput
         placeholder="Enter name"
         type="text"
@@ -65,11 +81,11 @@ const Form = ({ children, className, ...rest }) => {
         onChange={(e) => setAgree(e.target.value)}
         required
       />
-      <Button>
+      <Button disabled={loading} type="submit">
         <span>Submit now</span>
       </Button>
 
-      {error & <span className="error">{error}</span>}
+      {error && <span className="error">{error}</span>}
 
       <div className={classes.info}>
         Already have an account? <Link to="/login">Login</Link> instead.
