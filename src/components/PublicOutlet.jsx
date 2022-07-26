@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const PublicOutlet = () => {
-  return (
-    <div>PublicOutlet</div>
-  )
-}
+  const { currentUser } = useAuth();
 
-export default PublicOutlet
+  return !currentUser ? <Outlet /> : <Navigate to="/" />;
+};
+
+export default PublicOutlet;
